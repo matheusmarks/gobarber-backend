@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
   "extends": [
     "airbnb-base",
@@ -52,7 +53,8 @@
           "match": true
         }
       }
-    ]
+    ],
+    "@typescript-eslint/no-var-requires": "off"
   },
   "settings": {
     "import/resolver": {
