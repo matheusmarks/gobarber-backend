@@ -1,4 +1,3 @@
-import AuthenticateUserService from '@modules/users/services/AuthenticateUserService';
 import CreateUserService from '@modules/users/services/CreateUserService';
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';

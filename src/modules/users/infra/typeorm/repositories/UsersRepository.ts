@@ -3,7 +3,7 @@ import ICreateUserDTO from '@modules/users/dtos/ICreateUserDTO';
 import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 import User from '../entities/User';
 
-class AppointmentsRepository implements IUsersRepository {
+class UsersRepository implements IUsersRepository {
   private ormRepository: Repository<User>;
 
   constructor() {
@@ -13,6 +13,7 @@ class AppointmentsRepository implements IUsersRepository {
   public async create(userData: ICreateUserDTO): Promise<User> {
     const user = this.ormRepository.create(userData);
 
+    await this.ormRepository.save(user);
     return user;
   }
 
@@ -35,4 +36,4 @@ class AppointmentsRepository implements IUsersRepository {
   }
 }
 
-export default AppointmentsRepository;
+export default UsersRepository;
